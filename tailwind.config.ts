@@ -1,22 +1,28 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
   darkMode: ["class"],
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./client/index.html",
+    "./client/src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        // ...other custom colors
-      }
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        // add other color extensions here if needed...
+      },
     },
   },
   plugins: [
     require("tailwindcss-animate"),
-    require("@tailwindcss/typography")
+    require("@tailwindcss/typography"),
   ],
-} satisfies Config;
+};
+
+export default config;
