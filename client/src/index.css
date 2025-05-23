@@ -54,8 +54,9 @@
 }
 
 @layer base {
-  * {
-    @apply border-border;
+  *, ::before, ::after {
+    @apply border;
+    border-color: hsl(var(--border));
   }
 
   body {
