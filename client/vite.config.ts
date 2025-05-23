@@ -16,13 +16,12 @@ export default defineConfig(async () => ({
         ]
       : []),
   ],
-  resolve: {
-    alias: {
-      "@": path.resolve(import.meta.dirname, "src"), // THIS MUST POINT TO client/src
-      "@shared": path.resolve(import.meta.dirname, "../shared"),
-      "@assets": path.resolve(import.meta.dirname, "attached_assets"),
-    },
+resolve: {
+  alias: {
+    "@": path.resolve(__dirname, "src"),
   },
+},
+
   root: path.resolve(import.meta.dirname),
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
